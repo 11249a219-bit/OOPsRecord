@@ -1,5 +1,4 @@
 Program 4: Employee Salary System
-Topics Covered: Constructor, Destructor, Static Member, Objects as Function Arguments, Array of Objects
 #include <iostream>
 using namespace std;
 class Employee {
