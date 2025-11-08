@@ -1,5 +1,4 @@
 Program 2: Bank Account Management
-Topics Covered: Constructor, Destructor, Static Member, Objects as Function Arguments, Returning Objects, Array of Objects
 #include <iostream>
 using namespace std;
 class BankAccount {
