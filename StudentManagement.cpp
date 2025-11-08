@@ -1,5 +1,4 @@
 Program 1: Student Management System
-Topics Covered: Constructor, Destructor, Inline Function, Static Member, Array as class member, Objects as function arguments, Returning Objects, Array of Objects
 #include <iostream>
 using namespace std;
 class Student {
@@ -7,7 +6,6 @@ class Student {
     int roll;
     int marks[5];
     static int count; // static member
-
 public:
     // Parameterized constructor
     Student(string n, int r, int m[]) {
@@ -16,24 +14,19 @@ public:
         for(int i=0;i<5;i++) marks[i] = m[i];
         count++;
     }
-
-    ~Student() {
+     Student() {
         cout << "Student " << name << " removed." << endl;
     }
-
     inline int totalMarks() {
         int total=0;
         for(int i=0;i<5;i++) total += marks[i];
         return total;
     }
-
     string getName() { return name; }
-
     static void showCount() {
         cout << "Total students: " << count << endl;
     }
 };
-
 // Print grade of a student
 void printGrade(Student s) {
     int total = s.totalMarks();
@@ -43,7 +36,6 @@ void printGrade(Student s) {
     else if(total >= 350) cout << "B" << endl;
     else cout << "C" << endl;
 }
-
 // Return topper from array of students
 Student topper(Student s[], int n) {
     int maxTotal = s[0].totalMarks();
@@ -56,26 +48,19 @@ Student topper(Student s[], int n) {
     }
     return s[index];
 }
-
 int Student::count = 0;
-
 int main() {
     int m1[5] = {90,85,88,92,80};
     int m2[5] = {78,80,82,79,85};
     int m3[5] = {95,90,93,88,92};
-
     Student s[3] = {
         Student("Ravi", 101, m1),
         Student("Sita", 102, m2),
         Student("Anu", 103, m3)
     };
-
     for(int i=0;i<3;i++) printGrade(s[i]);
-
     Student t = topper(s, 3);
     cout << "Topper: " << t.getName() << endl;
-
     Student::showCount();
     return 0;
 }
-
