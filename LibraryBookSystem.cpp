@@ -1,5 +1,4 @@
 Program 5: Library Book System
-Topics Covered: Constructor, Destructor, Array of Objects, Arrays as Class Member Data, Returning Objects
 #include <iostream>
 using namespace std;
 class Book {
@@ -37,7 +36,6 @@ int main() {
         Book("Python Programming","Guido","Rossum",600)
     };
     for(int i=0;i<3;i++) b[i].display();
-
     Book exp = expensiveBook(b,3);
     cout << "Most expensive book: " << exp.getPrice() << endl;
     return 0;
